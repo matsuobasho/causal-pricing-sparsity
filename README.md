@@ -1,18 +1,18 @@
 # Causal Inference for Marketplace Elasticity
 **Estimating Price Sensitivity in Sparse Geographic Environments using DML and Entity Embeddings**
 
-## 📌 Project Overview
+## Project Overview
 This project focuses on estimating the causal impact of price shocks (using tolls as a proxy) on rider behavior (tip percentages) within the NYC TLC (Taxi & Limousine Commission) dataset. 
 
 The primary challenge addressed is **geographic sparsity**. Standard causal models (like OLS or basic DML) struggle with high-cardinality features like `LocationID` where many zones have low trip volume. This project implements a structural approach using **Double Machine Learning (DML)** and **Latent Entity Embeddings** to regularize treatment effects across the marketplace.
 
-## 🛠️ Technical Stack
+## Technical Stack
 *   **Language:** Python 3.9+
 *   **Causal Framework:** `EconML` (Double Machine Learning)
 *   **Deep Learning:** `PyTorch` (Entity Embeddings for high-cardinality features)
 *   **Data Processing:** `Pandas`, `NumPy`, `Scikit-Learn`
 
-## 🧪 Methodology
+## Methodology
 
 ### 1. Causal Identification
 We define the relationship using the partially linear model:
@@ -32,7 +32,7 @@ We employ a **Cross-Fit** procedure to avoid over-fitting:
 *   **Stage 2:** Residualize $T$ and $Y$ (remove the influence of confounders).
 *   **Stage 3:** Perform a final regression on residuals to identify the **Conditional Average Treatment Effect (CATE)**.
 
-## 📂 Repository Structure
+## Repository Structure
 ```text
 ├── notebooks/
 │   └── eda_and_embedding_init.ipynb   # Exploratory analysis & spatial sparsity audit
